@@ -19,8 +19,14 @@ class cadastroSteps {
 
     
     }
+    validarCadastroComSucesso() {
+        CADASTRO_LOCATORS.MENSAGEM_SUCESSO().should('be.visible')
 
-
+        // O fluxo cadastra um administrador e faz login automaticamente.
+        cy.location('pathname', { timeout: 10000 }).should('eq', '/admin/home')
+        cy.contains('h1', /Bem Vindo\s+Leonardo/).should('be.visible')
+        cy.get('[data-testid="logout"]').should('be.visible')
+    }
 
 }
 

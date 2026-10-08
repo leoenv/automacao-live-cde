@@ -11,6 +11,7 @@ describe('Cadastro Feature', () => {
     it('Deve validar o cadastro de usuário', () => {
         cadastroSteps.acessarCadastroPage()
         cadastroSteps.cadastrarUsuarioValido()
+        cadastroSteps.validarCadastroComSucesso()
 })
 
 })
